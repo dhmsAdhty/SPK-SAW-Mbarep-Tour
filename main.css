@@ -79,3 +79,15 @@
   color: #fff;
   font-weight: 400;
 }
+.logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.logout-btn i {
+  margin-right: 8px;
+}

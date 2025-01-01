@@ -8,16 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Menjalankan query untuk mencari username
     $sql = "SELECT * FROM user WHERE username = '$username'";
     $result = $conn->query($sql);
 
-    // Jika user ditemukan
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        // Verifikasi password
         if (password_verify($password, $user['password'])) {
-            // Menyimpan data session
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             header('Location: dashboard.php');
@@ -38,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3cbb0f1695.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Login - Mbarep Tour</title>
 </head>
 <body>
@@ -46,8 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <img src="/asset/image/logo.png" alt="logo">
         </div>
         <h3>LOGIN SPK MBAREP TOUR</h3>
-        <form method="POST" action=""> <!-- Form action ditetapkan untuk file ini -->
-            <!-- Username -->
+        <form method="POST" action="">
             <p>Username :</p>
             <div class="form-group">
               <i class="icon">
@@ -57,8 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               </i>
               <input type="text" name="username" placeholder="Masukkan Username" required>
             </div>
-
-            <!-- Password -->
             <p>Password :</p>
             <div class="form-group">
                 <i class="icon">
@@ -68,8 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </i>
                 <input type="password" name="password" placeholder="Masukkan Password" required>
             </div>
-            
-            <!-- Submit Button -->
             <div class="line"></div>
             <div class="button">
                 <a href="register.php" class="register">DAFTAR</a>
@@ -78,17 +70,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 
-   <!-- Modal Pop-up untuk Error -->
-<?php if (!empty($error_message)): ?>
-    <div id="errorModal" class="modal" style="display: block;">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h3>Hai teman, sepertinya ada yg salah</h3>
-            <p><?php echo $error_message; ?></p>
-        </div>
-    </div>
-<?php endif; ?>
-
-<script src="./script.js"></script>
+    <?php if (!empty($error_message)): ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '<?php echo $error_message; ?>'
+            });
+        </script>
+    <?php endif; ?>
 </body>
 </html>

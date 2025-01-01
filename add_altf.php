@@ -1,6 +1,5 @@
 <?php
 session_start();
-include('config/db.php');
 
 // Mengecek apakah pengguna sudah login
 if (!isset($_SESSION['user_id'])) {
@@ -10,23 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 
 // Menampilkan data pengguna
 $username = $_SESSION['username'] ?? 'Pengguna';
-
-
-// Ambil jumlah data dari masing-masing tabel
-$query_alternatif = "SELECT COUNT(*) AS total FROM alternatif";
-$query_kriteria = "SELECT COUNT(*) AS total FROM kriteria";
-// $query_hasil = "SELECT COUNT(*) AS total FROM hasil";
-// $query_user = "SELECT COUNT(*) AS total FROM user";
-
-$result_alternatif = $conn->query($query_alternatif);
-$result_kriteria = $conn->query($query_kriteria);
-// $result_hasil = $conn->query($query_hasil);
-// $result_user = $conn->query($query_user);
-
-$alternatif_count = $result_alternatif->fetch_assoc()['total'];
-$kriteria_count = $result_kriteria->fetch_assoc()['total'];
-// $hasil_count = $result_hasil->fetch_assoc()['total'];
-// $user_count = $result_user->fetch_assoc()['total'];
 ?>
 
 <!DOCTYPE html>
@@ -36,9 +18,8 @@ $kriteria_count = $result_kriteria->fetch_assoc()['total'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Dashboard</title>
     <?php
 if (empty($_SESSION['csrf_token'])) {
@@ -56,27 +37,27 @@ if (empty($_SESSION['csrf_token'])) {
 
         <ul class="navlink">
             <li>
-                <a href="dashboard.php" class="active">
+                <a href="dashboard.php">
                     <i class='bx bx-grid-alt'></i>
                     <span class="link_name">Dashboard</span>
             </li>
             <li>
-                <a href="data_alternatif.php" class="active">
+                <a href="data_alternatif.php" ">
                     <i class='bx bx-data'></i>
-                    <span class="link_name">Data Alternatif</span>
+                    <span class=" link_name">Data Alternatif</span>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="#">
                     <i class='bx bx-data'></i>
                     <span class="link_name">Data Kriteria</span>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="#">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name">Penilaian Alternatif</span>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="#">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name">Hasil Keputusan</span>
             </li>
@@ -91,23 +72,6 @@ if (empty($_SESSION['csrf_token'])) {
             </li>
         </ul>
     </div>
-    <div class="utama">
-        <h1 class="text-2xl font-bold text-left mt-10">Selamat Datang, <?php echo $username; ?></h1>
-        <h2 class="text-lg text-left mt-2">Dashboard</h2>
-    </div>
-    <div class="card-container">
-        <div class="card blue">
-            <h3 class="card-title">
-                <a href="data_alternatif.php">Data Alternatif</a>
-            </h3>
-            <p><?php echo $alternatif_count; ?></p>
-        </div>
-        <div class="card yellow">
-            <h3 class="card-title">Data Kriteria</h3>
-            <p><?php echo $kriteria_count; ?></p>
-        </div>
-    </div>
-
     <!-- 
     <section class="home-menu">
         <div class="content">
@@ -115,6 +79,24 @@ if (empty($_SESSION['csrf_token'])) {
             <span class="text">Menu</span>
         </div>
     </section> -->
+    <section>
+        <div class="dta-1">
+            <p class="font-bold text-2xl text-[#1e3964];">Selamat Datang, <?php echo $username; ?>!</p>
+        </div>
+    </section>
+    <div class="add-atf">
+        <h2 class="font-bold text-xl">Tambahkan Data Alternatif</h2>
+
+        <div class="form-group">
+            <label for="nama">Nama Kandidat</label>
+            <input type="text" id="nama" placeholder="Masukkan Nama Kandidat">
+
+        </div>
+        <button class="btn btn-secondary text-sm">
+            <a href="data_alternatif.php">Kembali</a>
+        </button>
+        <button class="btn-save text-sm">Simpan</button>
+    </div>
 </body>
 
 </html>

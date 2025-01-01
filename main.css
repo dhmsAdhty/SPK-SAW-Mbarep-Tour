@@ -1,8 +1,8 @@
 /* Fonts Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -11,9 +11,9 @@
   position: fixed;
   height: 100%;
   width: 250px;
-  background: #1E3964;
+  background: #1e3964;
   top: 0;
-  left: 0; 
+  left: 0;
 }
 
 .sidebar .logo-details {
@@ -33,7 +33,6 @@
   margin-right: 44px;
   font-size: 20px;
   font-weight: bold;
-  
 }
 
 .sidebar .navlink {
@@ -90,4 +89,239 @@
 }
 .logout-btn i {
   margin-right: 8px;
+}
+
+/* Styling for the table */
+.table {
+  width: 100%;
+  margin-top: 20px;
+  align-items: left;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: left;
+  background-color: #f9f9f9;
+}
+
+/* Table header styling */
+.table th {
+  background-color: #1e3964;
+  color: white;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Table cell styling */
+.table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Alternate row color for better readability */
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for rows */
+.table tr:hover {
+  background-color: #ddd;
+}
+
+/* Responsive table for small screens */
+@media screen and (max-width: 600px) {
+  .table {
+    border: 0;
+  }
+  .table thead {
+    display: none;
+  }
+  .table tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .table td {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    padding-left: 50%;
+    position: relative;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
+}
+
+.btn-tambah {
+  background-color: #1e3964;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 300px;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.add-atf {
+  width: auto;
+  height: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-right: 30px;
+  margin-left: 270px;
+  background-color: #f4f4f4;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: left;
+  color: #1e3964;
+}
+.form-container {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Jarak antar elemen dalam form */
+  flex-wrap: wrap; /* Agar form responsif */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Jarak antara label dan input */
+}
+
+.form-group label {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #1e3964; /* Warna biru */
+  font-weight: 400;
+}
+
+.form-group input {
+  padding: 8px;
+  align-items: center;
+  border: 1px solid #e2e8f0; /* Warna border */
+  border-radius: 15px;
+  font-size: 14px;
+  width: 300px; /* Lebar input */
+}
+
+.btn-save {
+  padding: 10px 16px;
+  background-color: #1e3964;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.btn-save:hover {
+  background-color: #163254; /* Warna biru lebih gelap saat hover */
+}
+
+section {
+  margin-top: 75px;
+}
+
+/* Styling untuk kolom aksi */
+td[data-label="Action"] a {
+  display: inline-block;
+  margin: 0 5px;
+  text-decoration: none;
+  color: #4a4a4a; /* Warna default ikon */
+  font-size: 18px; /* Ukuran ikon */
+  transition: color 0.3s ease;
+}
+
+td[data-label="Action"] a:hover {
+  color: #007bff; /* Warna ikon saat hover */
+}
+
+/* Icon edit */
+td[data-label="Action"] a i.bx-edit {
+  color: #28a745; /* Warna ikon edit */
+}
+
+td[data-label="Action"] a:hover i.bx-edit {
+  color: #218838; /* Warna ikon edit saat hover */
+}
+
+/* Icon delete */
+td[data-label="Action"] a i.bx-trash {
+  color: #dc3545; /* Warna ikon delete */
+}
+
+td[data-label="Action"] a:hover i.bx-trash {
+  color: #c82333; /* Warna ikon delete saat hover */
+}
+
+.utama {
+  margin-left: 300px;
+}
+/* Container untuk card */
+.card-container {
+  margin-top: 20px;
+  margin-left: 260px;
+  display: flex;
+  gap: 20px; /* Jarak antar card */
+  flex-wrap: wrap; /* Membuat card menyesuaikan ukuran layar */
+  padding: 20px;
+}
+
+/* Styling dasar untuk setiap card */
+.card {
+  padding: 16px;
+  border-radius: 8px;
+  width: 200px; /* Lebar card */
+  text-align: center;
+  color: white;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Warna untuk setiap card */
+.blue {
+  background-color: #1e3964; /* Biru */
+}
+
+.yellow {
+  background-color: #b5ba18; /* Kuning */
+}
+
+.teal {
+  background-color: #14b8a6; /* Teal */
+}
+
+.purple {
+  background-color: #6b21a8; /* Ungu */
+}
+
+/* Styling untuk teks jumlah data */
+.card p {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/* Responsif untuk tampilan kecil */
+@media screen and (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center; /* Menyusun card menjadi kolom dan rata tengah */
+  }
+
+  .card {
+    width: 100%; /* Card menjadi lebih lebar pada perangkat kecil */
+  }
 }

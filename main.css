@@ -237,31 +237,31 @@ td[data-label="Action"] a {
   display: inline-block;
   margin: 0 5px;
   text-decoration: none;
-  color: #4a4a4a; /* Warna default ikon */
-  font-size: 18px; /* Ukuran ikon */
+  color: #4a4a4a;
+  font-size: 18px;
   transition: color 0.3s ease;
 }
 
 td[data-label="Action"] a:hover {
-  color: #007bff; /* Warna ikon saat hover */
+  color: #007bff;
 }
 
 /* Icon edit */
 td[data-label="Action"] a i.bx-edit {
-  color: #28a745; /* Warna ikon edit */
+  color: #28a745;
 }
 
 td[data-label="Action"] a:hover i.bx-edit {
-  color: #218838; /* Warna ikon edit saat hover */
+  color: #218838;
 }
 
 /* Icon delete */
 td[data-label="Action"] a i.bx-trash {
-  color: #dc3545; /* Warna ikon delete */
+  color: #dc3545;
 }
 
 td[data-label="Action"] a:hover i.bx-trash {
-  color: #c82333; /* Warna ikon delete saat hover */
+  color: #c82333;
 }
 
 .utama {

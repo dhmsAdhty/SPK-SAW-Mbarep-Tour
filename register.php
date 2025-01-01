@@ -36,28 +36,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Register - Mbarep Tour</title>
 </head>
+
 <body>
     <div class="card">
-        <div class="logo">
-            <img src="/asset/image/logo.png" alt="logo">
-        </div>
         <h3>REGISTER SPK MBAREP TOUR</h3>
 
         <!-- Pesan Sukses atau Error -->
         <?php if (isset($error_message)) { ?>
-            <div class="alert alert-error">
-                <?php echo $error_message; ?>
-            </div>
+        <div class="alert alert-error">
+            <?php echo $error_message; ?>
+        </div>
         <?php } elseif (isset($success_message)) { ?>
-            <div class="alert alert-success">
-                <?php echo $success_message; ?>
-            </div>
+        <div class="alert alert-success">
+            <?php echo $success_message; ?>
+        </div>
         <?php } ?>
 
         <!-- Form Registrasi -->
@@ -93,23 +92,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Style untuk Notifikasi -->
     <style>
-        .alert {
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            font-size: 14px;
-            text-align: center;
-        }
-        .alert-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
+    .alert {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .alert-error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
     </style>
 </body>
+
 </html>

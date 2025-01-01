@@ -74,7 +74,7 @@ if (empty($_SESSION['csrf_token'])) {
                     <span class="link_name">Data Kriteria</span>
             </li>
             <li>
-                <a href="#">
+                <a href="penilaian.php">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name">Penilaian Alternatif</span>
             </li>
@@ -142,7 +142,7 @@ if (empty($_SESSION['csrf_token'])) {
                         <td data-label="Action">
                             <a href="edit-kt.php?id=<?= $row['id']; ?>" title="Edit">
                                 <i class='bx bx-edit'></i>
-                            </a> |
+                            </a> |a
                             <a href="delete-kt.php?id=<?= $row['id']; ?>" title="Delete"
                                 onclick="return confirm('Yakin ingin menghapus data ini?')">
                                 <i class='bx bx-trash'></i>

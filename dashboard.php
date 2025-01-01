@@ -66,12 +66,12 @@ if (empty($_SESSION['csrf_token'])) {
                     <span class="link_name">Data Alternatif</span>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="data_kriteria.php" class="active">
                     <i class='bx bx-data'></i>
                     <span class="link_name">Data Kriteria</span>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="Penilaian" class="active">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name">Penilaian Alternatif</span>
             </li>
@@ -84,7 +84,7 @@ if (empty($_SESSION['csrf_token'])) {
                 <form action="logout.php" method="POST">
                     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                     <button type="submit" class="logout-btn">
-                        <i class='bx bx-log-out'></i>
+                        <i class='bx-log-out'></i>
                         Logout
                     </button>
                 </form>

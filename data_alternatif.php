@@ -74,7 +74,7 @@ if (empty($_SESSION['csrf_token'])) {
                     <span class="link_name">Data Kriteria</span>
             </li>
             <li>
-                <a href="#">
+                <a href="penilaian.php">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name">Penilaian Alternatif</span>
             </li>

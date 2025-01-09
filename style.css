@@ -23,7 +23,8 @@ h3 {
 
 .card {
   width: 360px;
-  margin: auto;
+  margin-top: 23%;
+  margin-bottom: auto;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -31,7 +32,7 @@ h3 {
   border-radius: 25px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  padding: 30px 20px;
+  padding: 20px 20px;
 }
 
 p {

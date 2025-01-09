@@ -62,26 +62,31 @@ if (empty($_SESSION['csrf_token'])) {
                 <a href="dashboard.php">
                     <i class='bx bx-grid-alt'></i>
                     <span class="link_name">Dashboard</span>
+                </a>
             </li>
             <li>
-                <a href="data_alternatif.php" ">
+                <a href="data_alternatif.php">
                     <i class='bx bx-data'></i>
-                    <span class=" link_name">Data Alternatif</span>
+                    <span class="link_name">Data Alternatif</span>
+                </a>
             </li>
             <li>
                 <a href="data_kriteria.php">
                     <i class='bx bx-data'></i>
                     <span class="link_name">Data Kriteria</span>
+                </a>
             </li>
             <li>
                 <a href="penilaian.php">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name">Penilaian Alternatif</span>
+                </a>
             </li>
             <li>
-                <a href="#">
+                <a href="keputusan.php">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name">Hasil Keputusan</span>
+                </a>
             </li>
             <li>
                 <form action="logout.php" method="POST">
@@ -94,6 +99,7 @@ if (empty($_SESSION['csrf_token'])) {
             </li>
         </ul>
     </div>
+
     <!-- 
     <section class="home-menu">
         <div class="content">

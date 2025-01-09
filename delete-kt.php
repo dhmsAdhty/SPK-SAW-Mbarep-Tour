@@ -21,7 +21,7 @@ $sql = "DELETE FROM kriteria WHERE id = $id";
 
 if ($conn->query($sql) === TRUE) {
     echo "Data berhasil dihapus";
-    header("Location: data_kriteria.php"); // Redirect ke halaman data alternatif
+    header("Location: data_kriteria.php");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

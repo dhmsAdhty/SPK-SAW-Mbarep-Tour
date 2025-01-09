@@ -19,10 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($result->num_rows > 0) {
             $error_message = "Username sudah terdaftar!";
         } else {
-            // Meng-hash password sebelum disimpan
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-            // Menyimpan data user baru ke database
             $sql = "INSERT INTO user (username, password, email) VALUES ('$username', '$hashed_password', '$email')";
             if ($conn->query($sql) === TRUE) {
                 $success_message = "Registrasi berhasil! Silakan <a href='login.php'>login di sini</a>";

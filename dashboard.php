@@ -71,12 +71,12 @@ if (empty($_SESSION['csrf_token'])) {
                     <span class="link_name">Data Kriteria</span>
             </li>
             <li>
-                <a href="Penilaian" class="active">
+                <a href="Penilaian.php" class="active">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name">Penilaian Alternatif</span>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="keputusan.php" class="active">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name">Hasil Keputusan</span>
             </li>
